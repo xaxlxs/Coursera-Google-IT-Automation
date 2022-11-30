@@ -1,9 +1,11 @@
 from PIL import Image
-import os
-import sys
+# import os
+# import sys
 
-source = os.path.join(sys.path[0], "IMG_1020s.png")
-output = "opt/icons/"
+# source = os.path.join(sys.path[0], "IMG_1020s.png")
+source = "TestF/"
+output = "/opt/icons/"
 
-im = Image.open(source)
-im.save("new_file.jpg")
+for file in source:
+    im = Image.open(file)
+    im.save(output + file, "JPEG")
