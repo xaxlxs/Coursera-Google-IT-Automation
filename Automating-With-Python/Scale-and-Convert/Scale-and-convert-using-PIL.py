@@ -17,7 +17,7 @@ Save the image in /opt/icons/ as .jpeg format
 # image1.save("newblack_48dp.jpg")
 
 source = "TestF/"
-output = "/opt/icons/"
+output = "opt/icons/"
 rotation = 270
 size = 128, 128
 
