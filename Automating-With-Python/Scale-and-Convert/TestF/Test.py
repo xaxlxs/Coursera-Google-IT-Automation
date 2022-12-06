@@ -1,12 +1,17 @@
 #!/usr/bin/env python3
-
-import os
-import glob
+import os, sys
 from PIL import Image
 
-for x in glob.glob("IM*"):
-	new_image = Image.open(x).convert("RGB")
-	new_image.rotate(270).resize((128,128)).save("/opt/icons/" + x,"JPEG")
+size = (128, 128)
+
+for file in os.listdir():
+    output = os.path.splitext(file)[0]
+    try:
+        with Image.open(file).convert('RGB') as im:
+            im.thumbnail(size)
+            im.rotate(270).save("/opt/icons/" + output, "JPEG")
+    except OSError:
+        pass
 
 # import os
 # from PIL import Image
