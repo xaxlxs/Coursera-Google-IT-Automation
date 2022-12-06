@@ -4,12 +4,12 @@ from PIL import Image
 
 size = (128, 128)
 
-for file in os.listdir("/TestF/"):
+for file in os.listdir("TestF/"):
     output = os.path.splitext(file)[0]
     try:
         with Image.open(file).convert('RGB') as im:
             im.thumbnail(size)
-            im.rotate(270).save("/opt/icons/" + output, "JPEG")
+            im.rotate(270).save("opt/icons/" + output, "JPEG")
     except OSError:
         pass
 
