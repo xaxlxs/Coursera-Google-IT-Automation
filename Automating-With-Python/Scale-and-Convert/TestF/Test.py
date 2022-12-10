@@ -1,6 +1,13 @@
 #!/usr/bin/env python3
-import os, sys
-from PIL import Image
+
+# import os, sys
+# from PIL import Image
+
+# print(os.getcwd())
+
+# im = Image.open("ic_map_black_48dp")
+# im.save("new", "JPEG")
+
 
 # size = (128, 128)
 
@@ -13,10 +20,11 @@ from PIL import Image
 #     except OSError:
 #         pass
 
-# import os
-# from PIL import Image
+import os, glob
+from PIL import Image
 
-# os.getcwd()
+newsize = 128, 128
 
-im = Image.open("IMG_1020s.png")
-im.save("new.png")
+for file in glob.glob("ic_*"):
+    im = Image.open(file).convert('RGB')
+    im.rotate(270).resize((newsize)).save("/opt/icons/" + file, "JPEG")
