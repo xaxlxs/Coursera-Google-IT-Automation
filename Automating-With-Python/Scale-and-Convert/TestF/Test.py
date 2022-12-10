@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 
-import os, sys
+import os
 from PIL import Image
 
 # print(os.getcwd())
 
-# im = Image.open("ic_map_black_48dp")
-# im.save("new", "JPEG")
+# im = Image.open("ic_map_black_48dp").convert('RGB')
+# im.save("new.jpeg", "JPEG")
 
 
 size = (128, 128)
@@ -14,9 +14,8 @@ size = (128, 128)
 for file in os.listdir():
     output = os.path.splitext(file)[0]
     try:
-        with Image.open(file).convert('RGB') as im:
-            im.thumbnail(size)
-            im.rotate(270).save("opt/icons/" + output, "JPEG")
+        im = Image.open(file).convert('RGB')
+        im.save(output, "JPEG")
     except OSError:
         pass
 
