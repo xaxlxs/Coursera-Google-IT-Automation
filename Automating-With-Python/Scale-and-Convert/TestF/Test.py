@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
-# import os, sys
-# from PIL import Image
+import os, sys
+from PIL import Image
 
 # print(os.getcwd())
 
@@ -9,22 +9,22 @@
 # im.save("new", "JPEG")
 
 
-# size = (128, 128)
+size = (128, 128)
 
-# for file in os.listdir("TestF/"):
-#     output = os.path.splitext(file)[0]
-#     try:
-#         with Image.open(file).convert('RGB') as im:
-#             im.thumbnail(size)
-#             im.rotate(270).save("opt/icons/" + output, "JPEG")
-#     except OSError:
-#         pass
+for file in os.listdir():
+    output = os.path.splitext(file)[0]
+    try:
+        with Image.open(file).convert('RGB') as im:
+            im.thumbnail(size)
+            im.rotate(270).save("opt/icons/" + output, "JPEG")
+    except OSError:
+        pass
 
-import os, glob
-from PIL import Image
+# import os, glob
+# from PIL import Image
 
-newsize = 128, 128
+# newsize = 128, 128
 
-for file in glob.glob("ic_*"):
-    im = Image.open(file).convert('RGB')
-    im.rotate(270).resize((newsize)).save("/opt/icons/" + file, "JPEG")
+# for file in glob.glob("ic_*"):
+#     im = Image.open(file).convert('RGB')
+#     im.rotate(270).resize((newsize)).save(file, "JPEG")
