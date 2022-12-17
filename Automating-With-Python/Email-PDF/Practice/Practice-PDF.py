@@ -6,7 +6,7 @@ from reportlab.platypus import SimpleDocTemplate
 from reportlab.platypus import Paragraph, Spacer, Table, Image
 from reportlab.lib.styles import getSampleStyleSheet
 
-report = SimpleDocTemplate("report.pdf")
+report = SimpleDocTemplate("/workspaces/Coursera-Google-IT-Automation/Automating-With-Python/Email-PDF/Practice/report.pdf")
 styles = getSampleStyleSheet()
 
 report_title = Paragraph("A Complete Inventory of My Fruit", styles["h1"])
