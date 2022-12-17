@@ -11,7 +11,9 @@ source = os.path.join(os.getcwd(), relative_path)
 # os.chdir("..")
 # os.chdir("..")
 
-# to get script to work on qwiklabs, uncomment 2 chdir commands above, change source belot to relative_path
+# In order for the script to run in qwiklabs:
+# Uncomment the 2 chdir commands above
+# And change the source below to relative_path
 
 for file in os.listdir(source):
     with open(os.path.join(source, file)) as reader:
