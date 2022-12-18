@@ -89,9 +89,14 @@ def main(argv):
     # TODO: turn this into a PDF report
 
     import reports
-    reports.generate("/workspaces/Coursera-Google-IT-Automation/Automating-With-Python/Email-PDF/cars.pdf", "Sales summary for last month", "<br/>".join(summary), cars_dict_to_table(data))
+    reports.generate(
+        "/workspaces/Coursera-Google-IT-Automation/Automating-With-Python/Email-PDF/cars.pdf", 
+        "Sales summary for last month", 
+        "<br/>".join(summary), 
+        cars_dict_to_table(data))
 
     # TODO: send the PDF report as an email attachment
+
 
 
 if __name__ == "__main__":
