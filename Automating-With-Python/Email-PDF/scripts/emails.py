@@ -38,7 +38,7 @@ def send(message):
     # My connection details
 
     import getpass
-    sender = "sample@sample.com"
+    # sender = "sample@sample.com"
 
     mail_server = smtplib.SMTP('smtp-mail.outlook.com', 587)
 
@@ -48,7 +48,7 @@ def send(message):
     mail_server.ehlo()
     mail_server.starttls()
 
-    mail_server.login(sender, mail_pass)
+    mail_server.login(message["From"], mail_pass)
 
     mail_server.send_message(message)
     mail_server.quit()

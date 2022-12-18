@@ -93,11 +93,21 @@ def main(argv):
         "/workspaces/Coursera-Google-IT-Automation/Automating-With-Python/Email-PDF/cars.pdf", 
         "Sales summary for last month", 
         "<br/>".join(summary), 
-        cars_dict_to_table(data))
+        cars_dict_to_table(data)
+    )
 
     # TODO: send the PDF report as an email attachment
 
-    
+    import emails
+    message = emails.generate(
+        "automation@example.com",
+        "<user>@example.com",
+        "Sales summary for last month",
+        "\n".join(summary),
+        "/workspaces/Coursera-Google-IT-Automation/Automating-With-Python/Email-PDF/cars.pdf"
+    )
+
+    emails.send(message)
 
 if __name__ == "__main__":
     main(sys.argv)

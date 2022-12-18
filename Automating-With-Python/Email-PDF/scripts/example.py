@@ -18,16 +18,16 @@ table_data=[
 # Original example
 # reports.generate("/tmp/report.pdf", "A Complete Inventory of My Fruit", "This is all my fruit.", table_data)
 
-# My details
-reports.generate("/workspaces/Coursera-Google-IT-Automation/Automating-With-Python/Email-PDF/report.pdf", "A Complete Inventory of My Fruit", "This is all my fruit.", table_data)
-
-# Original example
 # sender = "sender@example.com"
 # receiver = "{}@example.com".format(os.environ.get('USER'))
 
 # My details
-sender = "xaxlxs@hotmail.com"
-receiver = "xaxlxs@hotmail.com"
+reports.generate("/workspaces/Coursera-Google-IT-Automation/Automating-With-Python/Email-PDF/report.pdf", "A Complete Inventory of My Fruit", "This is all my fruit.", table_data)
+
+sender = "example@example.com"
+receiver = "example@example.com"
+
+
 subject = "List of Fruits"
 body = "Hi\n\nI'm sending an attachment with all my fruit."
 
