@@ -29,6 +29,26 @@ def generate(sender, recipient, subject, body, attachment_path):
 
 def send(message):
     """Sends the message to the configured SMTP server."""
-    mail_server = smtplib.SMTP('localhost')
+    
+    # Original example
+    # mail_server = smtplib.SMTP('localhost')
+    # mail_server.send_message(message)
+    # mail_server.quit()
+    
+    # My connection details
+
+    import getpass
+    sender = "sample@sample.com"
+
+    mail_server = smtplib.SMTP('smtp-mail.outlook.com', 587)
+
+    # Interactively get password without saving it in script or printing it to screen
+    mail_pass = getpass.getpass("Password: ")
+
+    mail_server.ehlo()
+    mail_server.starttls()
+
+    mail_server.login(sender, mail_pass)
+
     mail_server.send_message(message)
     mail_server.quit()
