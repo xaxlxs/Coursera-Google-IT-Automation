@@ -19,7 +19,7 @@ for file in glob.glob("*.txt"):
         name = reader.readline()
         weight = reader.readline()
         description = reader.readline()
-        dict = {"name": name.strip(), "weight": weight.strip(" lbs\n"), "description": description.strip(), "image_name": image_file}
+        dict = {"name": name.strip(), "weight": int(weight.strip(" lbs\n")), "description": description.strip(), "image_name": image_file}
         data_json = json.dumps(dict)
         # print(data_json)
         response = requests.post(address, json=dict)
