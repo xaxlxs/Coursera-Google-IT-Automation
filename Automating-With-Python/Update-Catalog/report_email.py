@@ -17,7 +17,7 @@ def process_data():
             name = reader.readline().strip()
             weight = reader.readline().strip()
             # print(name, weight)
-            paragraph += "name: " + name + "\n" + "weight: " + weight + "\n\n"
+            paragraph += "name: " + name + "<br/>" + "weight: " + weight + "<br/>"
     return paragraph
 
 
