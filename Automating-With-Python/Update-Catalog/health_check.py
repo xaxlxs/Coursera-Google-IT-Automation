@@ -5,8 +5,8 @@ import psutil
 import socket
 import emails
 
-sender = "xaxlxs@hotmail.com"
-recipient = "xaxlxs@hotmail.com"
+sender = "automation@example.com"
+recipient = "username@example.com"
 subject = ""
 body = "Please check your system and resolve the issue as soon as possible."
 

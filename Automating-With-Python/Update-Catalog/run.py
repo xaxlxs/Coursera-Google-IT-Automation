@@ -16,11 +16,11 @@ for file in glob.glob("*.txt"):
         name, ext = os.path.splitext(file)
         image_file = name + ".jpeg"
         # print(reader.readlines())
-        name = reader.readline()
-        weight = reader.readline()
-        description = reader.readline()
-        dict = {"name": name.strip(), "weight": int(weight.strip(" lbs\n")), "description": description.strip(), "image_name": image_file}
-        data_json = json.dumps(dict)
-        # print(data_json)
+        name = reader.readline().strip()
+        weight = reader.readline().strip(" lbs\n")
+        weight = int(weight)
+        description = reader.readline().strip()
+        dict = {"name": name, "weight": weight, "description": description, "image_name": image_file}
+        # data_json = json.dumps(dict)
         response = requests.post(address, json=dict)
-        # print(response.status_code)
+        print(response.status_code)

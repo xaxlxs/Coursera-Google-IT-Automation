@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import sys
+import os
 import glob
 from datetime import datetime
 import reports
@@ -11,8 +12,9 @@ source = "supplier-data/descriptions/"
 
 def process_data():
     paragraph = ""
-    for file in glob.glob("*.txt", root_dir=source):
-        with open(source + file) as reader:
+    os.chdir(source)
+    for file in glob.glob("*.txt"):
+        with open(file) as reader:
             # print(reader.readlines())
             name = reader.readline().strip()
             weight = reader.readline().strip()
