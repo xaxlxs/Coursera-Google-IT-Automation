@@ -27,24 +27,23 @@ def generate_email(sender, recipient, subject, body, attachment=None):
 
 def send_email(message):
     # Original details
-    # mail_server = smtplib.SMTP('localhost')
-    # mail_server.send_message(message)
-    # mail_server.quit()
+    mail_server = smtplib.SMTP('localhost')
+    mail_server.send_message(message)
+    mail_server.quit()
     
     # My connection details
 
-    import getpass
-    # sender = "sample@sample.com"
+    # import getpass
 
-    mail_server = smtplib.SMTP('smtp-mail.outlook.com', 587)
+    # mail_server = smtplib.SMTP('smtp-mail.outlook.com', 587)
 
-    # Interactively get password without saving it in script or printing it to screen
-    mail_pass = getpass.getpass("Password: ")
+    # # Interactively get password without saving it in script or printing it to screen
+    # mail_pass = getpass.getpass("Password: ")
 
-    mail_server.ehlo()
-    mail_server.starttls()
+    # mail_server.ehlo()
+    # mail_server.starttls()
 
-    mail_server.login(message["From"], mail_pass)
+    # mail_server.login(message["From"], mail_pass)
 
-    mail_server.send_message(message)
-    mail_server.quit()
+    # mail_server.send_message(message)
+    # mail_server.quit()
