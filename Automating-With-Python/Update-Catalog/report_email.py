@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import sys
-import os
 import glob
 from datetime import datetime
 import reports
@@ -37,8 +36,8 @@ def main(argv):
     reports.generate_report(attachment, title, data)
 
     message = emails.generate_email(
-        "automation@example.com",
-        "username@example.com",
+        "xaxlxs@hotmail.com",
+        "xaxlxs@hotmail.com",
         "Upload Completed - Online Fruit Store",
         "All fruits are uploaded to our website successfully. A detailed list is attached to this email",
         attachment
