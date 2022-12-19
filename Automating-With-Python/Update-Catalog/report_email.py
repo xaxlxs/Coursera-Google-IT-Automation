@@ -36,8 +36,8 @@ def main(argv):
     reports.generate_report(attachment, title, data)
 
     message = emails.generate_email(
-        "xaxlxs@hotmail.com",
-        "xaxlxs@hotmail.com",
+        "automation@example.com",
+        "username@example.com",
         "Upload Completed - Online Fruit Store",
         "All fruits are uploaded to our website successfully. A detailed list is attached to this email",
         attachment
